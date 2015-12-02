@@ -1,4 +1,5 @@
 const app = angular.module("redditClone", ['ngRoute']);
+
 app.config(function($routeProvider, $locationProvider) {
   $routeProvider
     .when('/404', {
