@@ -1,27 +1,4 @@
 app.controller('RedditClone', function($scope) {
-  $scope.resort = function () {
-    if($scope.sortBy == 'date') {
-      $scope.posts.sort(function(a,b) {
-        return a.dateTime - b.dateTime;
-      });
-    }
-    if($scope.sortBy == 'votes') {
-      $scope.posts.sort(function(a,b) {
-        return a.upVotes - b.upVotes;
-      });
-    }
-    if($scope.sortBy == 'title') {
-      $scope.posts.sort(function(a,b) {
-        return a.title - b.title;
-      });
-    }
-  }
-  $scope.toggleShow = function (elementName) {
-    console.log(elementName, !elementName);
-    elementName = !elementName;
-    console.log(elementName, !elementName);
-  }
-  
   $scope.posts = [
     {
       title: "Slurpy vorpers snurfle",
@@ -42,4 +19,15 @@ app.controller('RedditClone', function($scope) {
       comments: [{content: "Larglelargel", author: "Qurp"}, {content:"I (censored) Sleemies", author:"Rick Sanchez"}]
     }
   ]; // test data
+  $scope.sortBy = 'date';
+  $scope.resort = function (sortTopic) {
+    console.log("Resort by: ", $scope.sortBy);
+    $scope.sortBy = sortTopic;
+  };
+  $scope.toggleShow = function (elementName) {
+    console.log(elementName, !elementName);
+    elementName = !elementName;
+    console.log(elementName, !elementName);
+  };
+
 });
