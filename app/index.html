@@ -45,7 +45,7 @@
               <ul class="dropdown-menu">
                 <li>Sort by<a ng-model="sortBy" ng-Click="resort()">date</a></li><!-- Sort by actions go here --> 
                 <li><a ng-model="sortBy" ng-Click="resort()">title</a></li> <!-- and here -->
-                <li><a ng-model="sortBy" ng-Click="resort()" >votes</a></li><!-- and here -->
+                <li><a ng-model="sortBy" ng-Click="resort()">votes</a></li><!-- and here -->
               </ul>
             </li>
           </ul>
@@ -71,10 +71,9 @@
               </div>
               <div class="row">
                 <div class="col-md-2">{{post.dateTime}} | </div>
-                <div class="col-md-2" ng-show={{post.comments}}>comments</div>
-                <div class="col-md-2" ng-show={{post.comments}}">
+                <div class="col-md-2" ng-hide={{post.showcomments}} ng-Click="toggleShow(post.showcomments)">comments</div>
+                <div class="col-md-2" ng-show={{post.showcomments}}>
                   <ul ng-repeat="comment in post.comments">
-                     
                     <li>Author: <b>{{comment.author}}</b> Comment: {{comment.content}} </li>
                   </ul>
                 </div>
