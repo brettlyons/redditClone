@@ -75,8 +75,8 @@
               </div>
               <div class="row">
                 <div class="col-md-2">{{post.dateTime}} | </div>
-                <div class="col-md-2" ng-hide={{post.showcomments}} ng-Click="toggleShow(post.showcomments)">comments</div>
-                <div class="col-md-2" ng-show={{post.showcomments}}>
+                <div class="col-md-2" ng-hide={{post.showcomments}} ng-Click="toggleShow(post)">comments</div>
+                <div class="col-md-2" ng-hide={{post.showcomments}}>
                   <ul ng-repeat="comment in post.comments">
                     <li>Author: <b>{{comment.author}}</b> Comment: {{comment.content}} </li>
                   </ul>

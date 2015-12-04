@@ -24,10 +24,14 @@ app.controller('RedditClone', function($scope) {
     console.log("Resort by: ", $scope.sortBy);
     $scope.sortBy = sortTopic;
   };
-  $scope.toggleShow = function (elementName) {
-    console.log(elementName, !elementName);
-    elementName = !elementName;
-    console.log(elementName, !elementName);
+  $scope.toggleShow = function (post) {
+    console.log(post);
+    console.log("-----------------")
+    console.log(post.showcomments);
+    post.showcomments = !post.showcomments; 
+    console.log(post);
+    console.log("-----------------")
+    console.log(post.showcomments);
   };
 
 });
