@@ -74,7 +74,9 @@
           </div>
           <div class="row">
             <div class="col-md-4"><time>{{post.dateTime | amDateFormat: 'dddd, MMMM Do YYYY, h:mm a'}}</time></div>
-            <div class="col-md-4" ng-click="toggleShow(post, 'showcomments')">Show/Hide {{ post.comments.length }} Comments</div>
+            <div class="col-md-4" ng-click="toggleShow(post, 'showcomments')">Show/Hide {{post.comments.length}}
+              <ng-pluralize count="post.comments.length" when="{'1': 'comment', 'other': 'comments'}"></ng-pluralize>
+            </div>
             <div class="col-md-4" ng-click="toggleShow(post, 'showAdd')">Add Comment</div>
           </div>
           <div class="row" ng-show="post.showcomments">

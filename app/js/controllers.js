@@ -18,7 +18,7 @@ app.controller('RedditClone', function($scope) {
       dateTime: new Date("December 5, 2015 15:32:58"),
       upVotes: 3,
       showcomments: false,
-      comments: [{content: "Larglelargel", author: "Qurp"}, {content:"I (censored) Sleemies", author:"Rick Sanchez"}],
+      comments: [{content:"I (censored) Sleemies", author:"Rick Sanchez"}],
       showAdd: false,
     }
   ]; // test data
@@ -29,10 +29,9 @@ app.controller('RedditClone', function($scope) {
   $scope.toggleShow = function (post, partOfPost) {
     post[partOfPost] = !post[partOfPost]; 
   };
+  $scope.commentInProgress = {};
   $scope.pushComment = function (post, comment) {
-    console.log(comment, "<----COMMENT");
     post.comments.push(comment);
     $scope.commentInProgress = {};
   };
-  $scope.commentInProgress = {author: "", content: "" };
 });
